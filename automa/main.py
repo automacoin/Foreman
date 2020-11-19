@@ -5,7 +5,7 @@ from automa.core.queue import queue
 from automa.core.errors import *
 
 # JSON-RPC entrypoint
-api_v1 = jsonrpc.Entrypoint("/v0")
+api_v1 = jsonrpc.Entrypoint("/v1")
 
 # Server singletons: database, queue and library handler
 
@@ -29,7 +29,7 @@ def allocation(client: str, capability: int, nonce: int, signature: str) -> dict
 @api_v1.method()
 def network() -> dict:
     """Gets the latest volunteer network information"""
-
+    pass
 
 # entrypoint: ./api/v1/... methods=stamp, tree, validate
 app = jsonrpc.API()

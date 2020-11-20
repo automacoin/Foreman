@@ -21,7 +21,7 @@ def account(client: str, random_nonce: int, signature: str) -> dict:
 
 @api_v1.method(errors=[])
 def allocation(client: str, capability: int, nonce: int, signature: str) -> dict:
-    """Get assigned a tranche of TMs to compute and submit before the epoch ends """
+    """Get assigned a range of TMs to compute and submit before the epoch ends """
 
     logger.info("allocation requested for {} ", client)
 

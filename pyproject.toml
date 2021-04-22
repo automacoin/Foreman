@@ -9,6 +9,8 @@ python = "^3.7"
 fastapi-jsonrpc = "^0.2.6"
 arq = "^0.19"
 attrs = "^20.2.0"
+loguru = "^0.5.3"
+uvicorn = "^0.13.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -1,8 +1,8 @@
 import fastapi_jsonrpc as jsonrpc
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
-from automa.core.queue import queue
-from automa.core.errors import *
+from core import queue
+from core.errors import *
 
 # JSON-RPC entrypoint
 api_v1 = jsonrpc.Entrypoint("/v1")
@@ -60,5 +60,4 @@ async def shutdown():
 
 if __name__ == "__main__":
     import uvicorn
-
     uvicorn.run("main:app", host="0.0.0.0", port=5000, debug=True, access_log=False)

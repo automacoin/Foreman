@@ -11,6 +11,7 @@ arq = "^0.19"
 attrs = "^20.2.0"
 loguru = "^0.5.3"
 uvicorn = "^0.13.4"
+dataset = "^1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

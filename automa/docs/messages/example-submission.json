@@ -1,5 +1,4 @@
 {
-    "from" : " 0xSERVERWALLET",
     "assigned": "0xWALLETADDRESS",
     "workload_ID": "123e4567-e89b-12d3-a456-426614174000",
     "turing_machines" : [11234457, 11235478],

@@ -3,12 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from core import queue
 from core.errors import *
-
+from core.queue import *
 # JSON-RPC entrypoint
 api_v1 = jsonrpc.Entrypoint("/v1")
 
 # Server singletons: database, queue and library handler
-
+queue = Queue()
 # RPC Methods
 
 
@@ -25,13 +25,18 @@ def allocation(client: str, capability: int, nonce: int, signature: str) -> dict
 
     logger.info("allocation requested for {} ", client)
 
+@api_v1.method(errors=[])
+def submission(assigned: str, workload_ID:str,turing_machines:dict, nonce: int, signature: str) -> dict:
+    """Get assigned a range of TMs to compute and submit before the epoch ends """
+
+    logger.info("submission made for {} ", workload_ID)
 
 @api_v1.method()
 def network() -> dict:
     """Gets the latest volunteer network information"""
     pass
 
-# entrypoint: ./api/v1/... methods=stamp, tree, validate
+# entrypoint: ./api/v1/... methods=account, allocation, network
 app = jsonrpc.API()
 app.bind_entrypoint(api_v1)
 app.add_middleware(
@@ -47,7 +52,7 @@ app.add_middleware(
 async def startup():
     logger.add("file_{time}.log")
     logger.info("Service is Spinning Up")
-    logger.info("Provisioning auth store...")
+    logger.info("Starting tape store...")
 
 
 # Dump the logs if a shutdown is occuring.
@@ -55,7 +60,6 @@ async def startup():
 async def shutdown():
     # ideally you'd put this backup in a docker volume, S3 or Grafana-compatible store.
     logger.info("Service is Shutting Down")
-    # make one last attempt to anchor the sidetree before shutdown
 
 
 if __name__ == "__main__":

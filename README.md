@@ -10,3 +10,8 @@ This node accept JSON-RPC requests for allocations, which represent a tranche of
 
 When combined with the browser frontend, this completes V0 of the automacoin system.
 
+
+# Development
+
+To Run:
+`$ docker-compose up -d --build`

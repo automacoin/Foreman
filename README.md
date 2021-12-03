@@ -15,3 +15,7 @@ When combined with the browser frontend, this completes V0 of the automacoin sys
 
 To Run:
 `$ docker-compose up -d --build`
+
+then open `http://localhost:8002/docs`
+
+or run `python src/app/main.py` and open `http://localhost:5000/docs`

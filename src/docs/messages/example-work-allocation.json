@@ -1,12 +1,6 @@
 {
-    "from" : " 0xSERVERWALLET",
-    "assigned": "0xWALLETADDRESS",
-    "workload_ID": "123e4567-e89b-12d3-a456-426614174000",
-    "tm_set" : [11234457, 11235478],
-    "colors": 2,
+    "tm_start" : 1235123,
     "states": 2,
-    "runtime": 500,
-    "deadline" : 1600350469,
-    "reward" : 13,
-    "server_nonce" : 233
+    "runtime":100,
+    "brick_size":500
 }

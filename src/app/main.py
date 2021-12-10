@@ -19,7 +19,7 @@ def account(client: str) -> dict:
 
 
 @api_v1.method(errors=[])
-def allocation() -> int:
+def allocation() -> dict:
     """Get assigned a start for your brick of TMs to compute and submit"""
 
     logger.info("allocation requested ")

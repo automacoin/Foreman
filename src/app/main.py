@@ -19,16 +19,16 @@ def account(client: str, random_nonce: int, signature: str) -> dict:
 
 
 @api_v1.method(errors=[])
-def allocation(client: str, capability: int, nonce: int, signature: str) -> dict:
-    """Get assigned a range of TMs to compute and submit before the epoch ends """
+def allocation() -> int:
+    """Get assigned a start for your brick of TMs to compute and submit"""
 
-    logger.info("allocation requested for {} ", client)
+    logger.info("allocation requested ")
 
 @api_v1.method(errors=[])
-def submission(assigned: str, workload_ID:str,turing_machines:dict, nonce: int, signature: str) -> dict:
-    """Get assigned a range of TMs to compute and submit before the epoch ends """
+def submission(client: str, start_tm:int ,result_map:dict) -> dict:
+    """Submit your TM results for an allocated compute task"""
 
-    logger.info("submission made for {} ", workload_ID)
+    logger.info("submission made for {} ", start_tm)
 
 @api_v1.method()
 def network() -> dict:

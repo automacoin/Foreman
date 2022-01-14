@@ -11,12 +11,6 @@ queue = Queue('redis')
 # RPC Methods
 
 
-@api_v1.method(errors=[])
-def account(client: str) -> dict:
-    """Get the associated account information for a signing wallet, will create resource if none exists"""
-
-    logger.info("account {} was fetched", client)
-
 
 @api_v1.method(errors=[])
 def allocation() -> dict:

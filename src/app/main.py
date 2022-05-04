@@ -1,7 +1,6 @@
 import fastapi_jsonrpc as jsonrpc
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
-from sqlalchemy import *
 from app.errors import *
 from app.queue import Queue
 

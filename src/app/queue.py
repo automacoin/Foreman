@@ -2,7 +2,7 @@ import asyncio
 import aioredis
 
 class Queue:
-    """Holds the incoming submissions until they can be processed. For now it is a simple datastore"""
+    """Holds the incoming submissions until they can be processed. For now it is a simple redis datastore"""
 
     def __init__(self,db_string):
         pass

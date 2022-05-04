@@ -12,6 +12,8 @@ attrs = "^20.2.0"
 loguru = "^0.5.3"
 uvicorn = "^0.13.4"
 dataset = "^1"
+aioredis = "^2.0.1"
+pydantic-aioredis = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

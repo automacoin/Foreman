@@ -2,13 +2,13 @@ import fastapi_jsonrpc as jsonrpc
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from app.errors import *
-from app.queue import Queue
+from app.library import Library
 
 # JSON-RPC entrypoint
 api_v1 = jsonrpc.Entrypoint("/v1")
 
 # Server singletons: database, queue and library handler
-queue = Queue("redis")
+queue = Library("redis")
 # RPC Methods
 
 
